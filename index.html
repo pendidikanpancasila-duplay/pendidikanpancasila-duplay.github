@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumen HTML - SMA Negeri 2 Playen</title>
+    <style>
+        /* Reset dasar */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Styling dari user */
+        body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    color: #1a5f7a;
+}
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPP PM: Harmoni dalam Keberagaman (Interaktif)</title>
+    <style>
+        :root {
+            --color-primary: #1e88e5; /* Biru */
+            --color-secondary: #ffc107; /* Kuning */
+            --color-success: #4caf50; /* Hijau */
+            --color-warning: #ff9800; /* Oranye */
+            --color-text: #333;
+            --color-bg: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        h2, h3 {
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 8px;
+            margin-top: 25px;
+            color: var(--color-primary);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+        }
+
+        .section-pm {
+            margin-top: 20px;
+            padding: 15px;
+            border-left: 5px solid var(--color-success);
+            background-color: #e8f5e9;
+        }
+
+        /* Tabs Interaktif */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tab-button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #eee;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 600;
+        }
+
+        .tab-button.active {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .tab-content {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 0 5px 5px 5px;
+            display: none;
+            background-color: #fff;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Accordion Interaktif (Untuk Asesmen) */
+        .accordion-item {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .accordion-header {
+            background-color: var(--color-secondary);
+            color: var(--color-text);
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-header:hover {
+            background-color: #ffb300;
+        }
+
+        .accordion-content {
+            padding: 15px;
+            background-color: #fffde7;
+            border-top: 1px solid #ccc;
+            display: none;
+        }
+        
+        /* Fitur Interaktif Prinsip PM */
+        .pm-feature {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .berkesadaran {
+            background-color: #e3f2fd;
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .bermakna {
+            background-color: #fff3e0;
+            border-left: 5px solid var(--color-warning);
+        }
+
+        .menggembirakan {
+            background-color: #e8f5e9;
+            border-left: 5px solid var(--color-success);
+        }
+        
+        .pm-feature:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .pm-label {
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /* Tabel Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+        }
+        
+        /* Toggle Detail RPP */
+        .rpp-detail {
+            border: 1px dashed var(--color-primary);
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            display: none;
+        }
+        .toggle-btn {
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>RPP PEMBELAJARAN MENDALAM (PM) INTERAKTIF</h1>
+        <h2>Pendidikan Pancasila Kelas XI: Konsep Harmoni dalam Keberagaman</h2>
+    </header>
+
+    <div class="section">
+        <h3>🚀 Ringkasan Informasi Umum</h3>
+        <table>
+            <tr><th>Aspek</th><th>Deskripsi</th></tr>
+            <tr><td>Mata Pelajaran</td><td>Pendidikan Pancasila [cite: 3]</td></tr>
+            <tr><td>Kelas/Fase</td><td>XI / Fase F [cite: 3]</td></tr>
+            <tr><td>Topik Pembelajaran</td><td>Konsep Harmoni dalam Keberagaman [cite: 3]</td></tr>
+            <tr><td>Model Pembelajaran</td><td>Problem-Based Learning (PBL) [cite: 33]</td></tr>
+            <tr><td>Dimensi Profil Lulusan</td><td>Gotong Royong [cite: 29]</td></tr>
+        </table>
+        <button class="toggle-btn" onclick="toggleDetail('rpp-detail-umum')">Lihat Detail RPP Lengkap</button>
+        <div id="rpp-detail-umum" class="rpp-detail">
+            <h4>Tujuan Pembelajaran (TP) [cite: 6]</h4>
+            <ol>
+                <li>**Memahami** pengertian dan dimensi Konsep Harmoni dalam Keberagaman di Indonesia[cite: 7].</li>
+                <li>**Menerapkan** sikap toleransi dan menghargai perbedaan dalam interaksi sehari-hari di lingkungan sekolah dan masyarakat[cite: 8].</li>
+                <li>**Menganalisis** akar permasalahan dan dampak ketidakharmonisan yang timbul akibat keberagaman[cite: 9].</li>
+                <li>**Mengevaluasi** upaya-upaya efektif yang dapat dilakukan untuk menjaga dan memperkuat Harmoni dalam Keberagaman[cite: 10].</li>
+                <li>**Mencipta** rancangan sederhana kampanye atau program kecil untuk mempromosikan persatuan dan kesatuan di lingkungan terdekat[cite: 11].</li>
+            </ol>
+            <h4>Identifikasi Kebutuhan Belajar [cite: 17]</h4>
+            <ul>
+                <li>**Visual**: Membutuhkan media visual seperti infografis, video, atau poster[cite: 18].</li>
+                <li>**Auditori**: Membutuhkan diskusi terstruktur dan presentasi kelompok[cite: 19].</li>
+                <li>**Kinestetik**: Membutuhkan aktivitas bermain peran atau simulasi studi kasus[cite: 20].</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>💡 Kegiatan Inti Pembelajaran (60 Menit) - Interaktif</h3>
+        <p>Klik pada setiap tahap PM untuk melihat detail aktivitas, sintaks PBL, dan penerapan prinsip PM.</p>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'tab-memahami')">1. MEMAHAMI (15 Menit)</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-mengaplikasi')">2. MENGAPLIKASI (30 Menit)</button>
+            <button class="tab-button" onclick="openTab(event, 'tab-merefleksi')">3. MEREFLEKSI (15 Menit)</button>
+        </div>
+
+        <div id="tab-memahami" class="tab-content active">
+            <h4>Tahapan Aktivitas:</h4>
+            <ul>
+                <li><div class="pm-feature berkesadaran" onclick="showAlert('Berkesadaran', 'Fokus pada perasaan personal dan empati terhadap Studi Kasus Konflik SARA di media sosial.')"><span class="pm-label">Berkesadaran (Orientasi):</span> Guru menyajikan Studi Kasus A: "Konflik SARA di kota X akibat salah paham di media sosial." Siswa diajak untuk merespons kasus secara personal: <em>Apa yang saya rasakan jika berada di posisi itu?</em> [cite: 76] </div></li>
+                <li><div class="pm-feature menggembirakan" onclick="showAlert('Menggembirakan', 'Gunakan Jamboard/Sticky Notes digital untuk Curah Pendapat Anonim. Ini interaktif dan menyenangkan.')"><span class="pm-label">Menggembirakan (Curah Pendapat):</span> Siswa menggunakan <em>Jamboard</em> atau <em>Sticky Notes</em> untuk menuliskan 3 kata kunci yang mewakili "Harmoni" dan "Konflik"[cite: 76].</div></li>
+                <li><div class="pm-feature bermakna" onclick="showAlert('Bermakna', 'Menganalisis Konsep: Menyimpulkan definisi "Harmoni dalam Keberagaman" dari kata kunci siswa, bukan dari buku teks.')"><span class="pm-label">Bermakna (Menganalisis Konsep):</span> Guru membimbing diskusi untuk menyimpulkan pengertian "Harmoni dalam Keberagaman" berdasarkan kata kunci yang sudah dikumpulkan siswa[cite: 76].</div></li>
+            </ul>
+            <p>Sintaks PBL: Orientasi Peserta Didik pada Masalah (Studi Kasus) dan Diskusi Terpimpin[cite: 76].</p>
+        </div>
+
+        <div id="tab-mengaplikasi" class="tab-content">
+            <h4>Tahapan Aktivitas:</h4>
+            <ul>
+                <li><div class="pm-feature menggembirakan" onclick="showAlert('Gotong Royong & Menggembirakan', 'Gunakan kelompok heterogen untuk memecahkan masalah kontekstual (Studi Kasus B: Kerukunan Perayaan Hari Besar).')"><span class="pm-label">Gotong Royong (Mengorganisasi):</span> Siswa dibagi menjadi kelompok heterogen dan menerima tugas untuk **Menerapkan/Menganalisis** solusi untuk Studi Kasus B: "Cara menjaga kerukunan saat perayaan hari besar agama/suku yang berbeda di lingkungan perumahan"[cite: 76].</div></li>
+                <li><div class="pm-feature berkesadaran" onclick="showAlert('Berkesadaran', 'Penyelidikan: Kelompok melakukan penyelidikan digital/wawancara untuk Menganalisis akar masalah dan Mengevaluasi solusi yang mungkin.')"><span class="pm-label">Berkesadaran (Penyelidikan):</span> Kelompok melakukan penyelidikan (pencarian data dari sumber digital/wawancara sederhana) dan berdiskusi untuk **Menganalisis** akar masalah dan **Mengevaluasi** solusi yang mungkin[cite: 76].</div></li>
+                <li><div class="pm-feature bermakna" onclick="showAlert('Bermakna (Presentasi)', 'Siswa Mencipta dan Menyajikan solusi (mind map/poster kampanye damai) dengan teknik kreatif. Ini adalah puncak penerapan C6.')"><span class="pm-label">Menggembirakan (Presentasi):</span> Setiap kelompok **Mencipta** dan **Menyajikan** solusi (misalnya: membuat <em>mind map</em> resolusi konflik/poster kampanye damai) dengan teknik presentasi yang kreatif[cite: 76].</div></li>
+            </ul>
+            <p>Sintaks PBL: Mengorganisasi Peserta Didik untuk Belajar, Membimbing Penyelidikan Kelompok, dan Mengembangkan/Menyajikan Hasil Karya[cite: 76].</p>
+        </div>
+
+        <div id="tab-merefleksi" class="tab-content">
+            <h4>Tahapan Aktivitas:</h4>
+            <ul>
+                <li><div class="pm-feature bermakna" onclick="showAlert('Bermakna (Evaluasi)', 'Guru memimpin diskusi untuk Menganalisis dan Mengevaluasi solusi terbaik. Apakah solusi tersebut relevan dan berkelanjutan?')"><span class="pm-label">Bermakna (Evaluasi Solusi):</span> Guru memimpin diskusi kelas untuk **Menganalisis dan Mengevaluasi** solusi terbaik yang disajikan[cite: 76].</div></li>
+                <li><div class="pm-feature berkesadaran" onclick="showAlert('Berkesadaran (Refleksi Diri)', 'Siswa menuliskan satu aksi nyata yang akan mereka lakukan untuk Menerapkan toleransi di lingkungan mereka.')"><span class="pm-label">Berkesadaran (Refleksi Diri):</span> Siswa menuliskan satu aksi nyata yang akan mereka lakukan dalam seminggu ke depan untuk **Menerapkan** toleransi di lingkungan mereka[cite: 76].</div></li>
+                <li><div class="pm-feature menggembirakan" onclick="showAlert('Gotong Royong & Menggembirakan', 'Setiap siswa memberikan satu pujian/apresiasi kepada anggota kelompok yang paling menonjol dalam sikap Gotong Royong.')"><span class="pm-label">Gotong Royong (Pujian/Apresiasi):</span> Setiap siswa memberikan satu pujian/apresiasi kepada anggota kelompoknya yang paling menonjol dalam menunjukkan sikap **Gotong Royong** hari ini[cite: 76].</div></li>
+            </ul>
+            <p>Sintaks PBL: Menganalisis dan Mengevaluasi Proses Pemecahan Masalah[cite: 76].</p>
+        </div>
+    </div>
+
+    <div class="section section-pm">
+        <h3>✨ Hasil Analisis dan Saran Konkret (PM)</h3>
+        <p>Saran untuk meningkatkan aspek **Bermakna** dan **Menggembirakan** dalam RPP[cite: 94, 95].</p>
+
+        <div class="pm-feature bermakna" onclick="showAlert('Saran Bermakna', 'Implementasi "Mini-Wawancara Kontekstual Lokal" di awal pembelajaran.')">
+            <h4>🎯 Peningkatan **Bermakna** (Kontekstualisasi)</h4>
+            <ul>
+                <li>Gunakan **"Mini-Wawancara Kontekstual Lokal"**: Siswa mewawancarai keluarga/tetangga tentang praktik harmoni lokal (memperkuat Kemitraan Orang Tua) sebelum diskusi dimulai.</li>
+                <li>Tingkatkan Refleksi menjadi **"Proyek Penciptaan Digital Kontekstual"** (C6): Siswa wajib membuat produk digital (Vlog 60 detik/Infografis) sebagai hasil akhir[cite: 11].</li>
+            </ul>
+        </div>
+
+        <div class="pm-feature menggembirakan" onclick="showAlert('Saran Menggembirakan', 'Implementasi "Simulasi Dilema Identitas" dan "Kuis Cepat Interaktif" (Gamifikasi).')">
+            <h4>🎉 Peningkatan **Menggembirakan** (Interaksi & Kreativitas)</h4>
+            <ul>
+                <li>Terapkan **"Simulasi Dilema Identitas"**: Pada tahap Memahami, siswa mendapat kartu identitas acak dan merespons konflik dari sudut pandang tersebut (memenuhi Kebutuhan **Kinestetik**)[cite: 20].</li>
+                <li>Integrasikan **"Kuis Cepat Interaktif"** (Kahoot!/Quizizz) di Kegiatan Awal: Ini berfungsi sebagai asesmen awal yang menyenangkan dan memotivasi[cite: 73, 80].</li>
+                <li>Optimalkan **"Visualisasi Solusi Interaktif"** menggunakan *Miro*/*Padlet* untuk membuat *Problem-Solving Mind Map* digital secara serempak (memperkuat **Gotong Royong**)[cite: 60].</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>📊 Asesmen dan Rubrik Interaktif</h3>
+        <p>Klik pada bagian Asesmen untuk melihat detail dan rubrik penilaian.</p>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('asesmen-awal')">
+                Asesmen Awal Pembelajaran (Kognitif) [cite: 80]
+            </div>
+            <div class="accordion-content" id="asesmen-awal">
+                <p>Mengukur kesiapan belajar (C1-C4)[cite: 82]:</p>
+                <ul>
+                    <li>**PG (C1):** Bentuk keberagaman yang paling menonjol di Indonesia dan sering menjadi isu sosial adalah.... (Jawab: Suku, Agama, Ras, dan Antargolongan)[cite: 82].</li>
+                    <li>**PG (C2):** Sikap yang paling tepat untuk menghadapi perbedaan pandangan dalam diskusi adalah.... (Jawab: Menghargai dan mencoba memahami)[cite: 82].</li>
+                    <li>**Essay (C4):** Jelaskan mengapa komunikasi yang baik sangat penting untuk mencegah konflik yang disebabkan oleh keberagaman! (Analisis peran komunikasi) [cite: 82].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('asesmen-proses')">
+                Asesmen Proses (Formatif) [cite: 83]
+            </div>
+            <div class="accordion-content" id="asesmen-proses">
+                <h4>Rubrik Penilaian Diskusi Kelas (Kelompok) [cite: 86]</h4>
+                <table>
+                    <tr><th>Indikator</th><th>Baru Memulai (1)</th><th>Berkembang (2)</th><th>Cakap (3)</th><th>Mahir (4)</th></tr>
+                    <tr><td>Keaktifan Bertanya</td><td>Jarang mengajukan pertanyaan atau tidak relevan [cite: 87].</td><td>Mengajukan pertanyaan, namun harus dipancing [cite: 87].</td><td>Aktif bertanya dan pertanyaan relevan [cite: 87].</td><td>Sangat aktif, pertanyaan kritis, mendalam, dan memicu diskusi[cite: 87].</td></tr>
+                    <tr><td>Kerja Sama (Gotong Royong)</td><td>Tidak berkontribusi, cenderung pasif [cite: 87].</td><td>Berkontribusi jika diminta [cite: 87].</td><td>Berkontribusi aktif dan mendukung anggota lain [cite: 87].</td><td>Sangat proaktif, menginspirasi, dan memastikan partisipasi penuh[cite: 87].</td></tr>
+                    <tr><td>Kreativitas (Solusi/Presentasi)</td><td>Sangat sederhana dan meniru [cite: 87].</td><td>Cukup baik, namun presentasi konvensional [cite: 87].</td><td>Solusi kreatif, presentasi menarik [cite: 87].</td><td>Solusi orisinal, media sangat kreatif dan efektif[cite: 87].</td></tr>
+                </table>
+
+                <h4>Rubrik Lembar Observasi Diskusi Kelompok (Individu) [cite: 88]</h4>
+                <table>
+                    <tr><th>Kriteria</th><th>Kurang (1)</th><th>Cukup (2)</th><th>Baik (3)</th></tr>
+                    <tr><td>Partisipasi</td><td>Hanya diam, tidak mengajukan ide [cite: 89].</td><td>Berpartisipasi ketika diminta [cite: 89].</td><td>Secara aktif memberikan ide dan masukan[cite: 89].</td></tr>
+                    <tr><td>Kolaborasi (Gotong Royong)</td><td>Menolak berbagi sumber daya [cite: 89].</td><td>Bersedia berbagi tugas, kurang inisiatif [cite: 89].</td><td>Secara sukarela membantu dan menjaga kekompakan[cite: 89].</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('asesmen-akhir')">
+                Asesmen Akhir Pembelajaran (Sumatif) [cite: 90]
+            </div>
+            <div class="accordion-content" id="asesmen-akhir">
+                <h4>Kisi-Kisi Penilaian (PG: C2-C6, Essay: C3-C6) [cite: 93]</h4>
+                <ul>
+                    <li>**PG (C5):** Soal mengenai **Mengevaluasi** efektivitas suatu kebijakan menjaga harmoni (Sulit)[cite: 93].</li>
+                    <li>**PG (C6):** Soal mengenai **Mencipta** / memilih ide program promosi persatuan terbaik (Sulit)[cite: 93].</li>
+                    <li>**Essay Studi Kasus (C4):** Menyajikan solusi yang **menerapkan** toleransi pada studi kasus konflik (Sedang)[cite: 93].</li>
+                    <li>**Essay Studi Kasus (C6):** **Mencipta** rancangan program anti-hoaks keberagaman (Sulit)[cite: 93].</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        
+        // Hide all tab contents
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Deactivate all tab buttons
+        tablinks = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab and set button as active
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function toggleAccordion(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    }
+    
+    function showAlert(title, message) {
+        alert("Prinsip PM: " + title + "\n\n" + message);
+    }
+    
+    function toggleDetail(id) {
+        var detail = document.getElementById(id);
+        var button = detail.previousElementSibling;
+        if (detail.style.display === "block") {
+            detail.style.display = "none";
+            button.textContent = "Lihat Detail RPP Lengkap";
+        } else {
+            detail.style.display = "block";
+            button.textContent = "Sembunyikan Detail RPP Lengkap";
+        }
+    }
+</script>
+
+</body>
+</html>
+    
+    <script>
+        console.log('Media Pembelajaran Interaktif');
+    </script>
+</body>
+</html>
